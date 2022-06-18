@@ -1,0 +1,22 @@
+.topbar-container {
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 5px 0px hsl(0, 0%, 0%, .2);
+}
+
+.topbar-inside-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-inside-container h1 {
+    font-size: 1.8rem;
+}
+
+.btn-theme{
+    cursor:pointer;
+    margin-left: .25rem;
+    text-transform: capitalize;
+}

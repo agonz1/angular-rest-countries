@@ -1,0 +1,30 @@
+.card-container{
+    width: 230px;
+    border-radius: .25rem;
+    background-color: white;
+    box-shadow: 1px 0px 4px 0px var(--very-light-gray);
+}
+
+.card-container img {
+    width: 100%;
+    border-radius: .25rem;
+}
+
+.card-container .card-text {
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+    text-transform: capitalize;
+}
+
+
+.card-text h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card-text p {
+    line-height: 1.5;
+}
+
+.card-title{
+    font-weight: 600;
+}
