@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { faSearch, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { Country, Region } from 'src/app/shared/country.model';
+import { Country } from 'src/app/shared/country.model';
+import { DatastorageService } from 'src/app/shared/data-storage.service';
+import { CountryService } from './country.service';
 
 @Component({
   selector: 'app-list-countries',
@@ -12,22 +14,33 @@ export class ListCountriesComponent implements OnInit {
   
   faSearch = faSearch;
   faAngleDown = faAngleDown;
-  country: Country = {
-    name: "Germany", population: 81770900,
-    nativeName: '',
-    subRegion: '',
-    currencies: [],
-    languages: [],
-    topLevelDomain: '',
-    borderCountries: [],
-    region: Region.EUROPE,
-    capital: 'Berlin',
-    imageUrl: 'https://flagcdn.com/w320/de.png'
-  }
+  loadedCountries: Country[];
+  searchInput: string = "";
+  regionFilterText: string = "Filter by region";
   
-  constructor() { }
+  constructor(private cService: CountryService, private dsService: DatastorageService) { }
 
   ngOnInit(): void {
+    this.dsService.fetchAllCountries();
+    
+    this.cService.countriesChanged.subscribe(countries => {this.loadedCountries = countries});
   }
 
+  onSearch(){
+    this.loadedCountries = (!this.searchInput) ? this.cService.getCountries() : this.cService.search(this.searchInput);
+  }
+
+  onSearchByRegion(event){ 
+    const firstWordPattern = /^\w*/;
+
+    const filter: string = event.target.innerText.match(firstWordPattern)[0];
+
+    if(filter.toLocaleLowerCase() === "all"){
+      this.loadedCountries = this.cService.getCountries();
+      this.regionFilterText = "Filter by region";
+    } else {
+      this.regionFilterText = filter;
+      this.loadedCountries = this.cService.searchByRegion(filter);
+    }
+  }
 }

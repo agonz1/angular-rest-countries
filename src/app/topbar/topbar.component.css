@@ -1,10 +1,12 @@
 .topbar-container {
     padding: 1rem 2rem;
-    box-shadow: 0px 0px 5px 0px hsl(0, 0%, 0%, .2);
+    box-shadow: 0px 0px 5px 0px hsl(0, 0%, 0%, .25);
+    margin-bottom: .25rem;
+    background-color: var(--elements);
 }
 
 .topbar-inside-container{
-    max-width: 1440px;
+    max-width: 1330px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -13,10 +15,13 @@
 
 .topbar-inside-container h1 {
     font-size: 1.8rem;
+    color: var(--text);
+    cursor: pointer;
 }
 
 .btn-theme{
     cursor:pointer;
     margin-left: .25rem;
     text-transform: capitalize;
+    color: var(--text);
 }

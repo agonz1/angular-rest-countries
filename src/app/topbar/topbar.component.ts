@@ -10,10 +10,16 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons';
 export class TopbarComponent implements OnInit {
 
   faMoon = faMoon;
+  darkMode: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  switchThemes(){
+    this.darkMode = !this.darkMode;
+    console.log("themes switched!");
   }
 
 }

@@ -1,9 +1,9 @@
 export interface Country{
     name: string;
-    nativeName: string;
+    nativeName: any;
     subRegion: string;
-    currencies: string[];
-    languages: string[];
+    currencies: any;
+    languages: any;
     topLevelDomain: string;
     borderCountries: string[];
     population: number;
@@ -13,5 +13,5 @@ export interface Country{
 }
 
 export enum Region {
-    AFRICA = "AFRICA", ASIA = "ASIA", AMERICA = "AMERICA", EUROPE = "EUROPE", OCEANIA = "OCEANIA"
+    AFRICA = "AFRICA", ASIA = "ASIA", AMERICAS = "AMERICAS", EUROPE = "EUROPE", OCEANIA = "OCEANIA"
 }

@@ -12,12 +12,23 @@ body {
 }
 
 :root{
-    --dark-blue: hsl(209, 23%, 22%); /* dark mode elements */
-    --very-dark-blue: hsl(207, 26%, 17%); /* dark mode background */
-    --lm-very-dark-blue: hsl(200, 15%, 8%); /*light mode text */
-    --dark-gray: hsl(0, 0%, 52%); /* light mode input */
-    --very-light-gray: hsl(0, 0%, 98%); /*light mode background */
-    --white: hsl(0, 0, 100%); /* dark mode text && light mode elements */
+    --bg-primary: hsl(0, 0%, 98%);
+    --elements: hsl(0, 0%, 100%);
+    --input: hsl(0, 0%, 52%);
+    --text: hsl(200, 15%, 8%); 
+}
+
+
+:root .dark-theme{
+    --elements: hsl(209, 23%, 22%);
+    --bg-primary: hsl(207, 26%, 17%);
+    --input: hsl(0, 0%, 52%);
+    --text: hsl(50, 50%, 100%); 
+    --heading: hsl(0, 0, 100%); 
+}
+
+body {
+    background-color: var(--bg-primary);
 }
 
 .text-md{
