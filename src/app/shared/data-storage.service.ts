@@ -51,7 +51,7 @@ export class DatastorageService{
                     currencies: Object.values(responseObj.currencies)[0],
                     languages: responseObj.languages,
                     topLevelDomain: responseObj.tld,
-                    borderCountries: responseObj.borders,
+                    borderCountries: (responseObj.borders) ? responseObj.borders : ['None'],
                     region: responseObj.region,
                     capital: responseObj.capital,
                     imageUrl: responseObj.flags.png

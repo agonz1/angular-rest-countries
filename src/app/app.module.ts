@@ -16,8 +16,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: ListCountriesComponent },
-  { path: 'details/:countryName', component: CountryDetailComponent }
+  { path: '', component: ListCountriesComponent },
+  { path: 'details/:countryName', component: CountryDetailComponent },
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({

@@ -25,3 +25,11 @@
     text-transform: capitalize;
     color: var(--text);
 }
+
+
+@media(max-width: 560px) {
+        
+    .topbar-inside-container h1 {
+        font-size: 1rem;
+    }
+}

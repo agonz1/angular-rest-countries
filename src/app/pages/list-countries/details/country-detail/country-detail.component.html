@@ -1,6 +1,6 @@
 <div class="s-container">
   <div class="top-container">
-    <div class="btn-back" routerLink="/home">
+    <div class="btn-back" routerLink="/">
       <fa-icon [icon]="faArrowLeftLong"></fa-icon>
       <a>Back</a>
     </div>
@@ -8,7 +8,7 @@
   <div class="spinner-container" *ngIf="!country">
     <app-spinner></app-spinner>
   </div>
-  <div class="botttom-container">
+  <div class="botttom-container" *ngIf="country">
     <img [src]="country.imageUrl" alt="" class="flag" />
     <div class="details">
       <h2>{{ country.name }}</h2>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="border-countries">
-        <span class="card-title">Border countries: </span>
+        <span class="border-title">Border countries: </span>
         <div
           class="border-country"
           *ngFor="let borderCountry of country.borderCountries"

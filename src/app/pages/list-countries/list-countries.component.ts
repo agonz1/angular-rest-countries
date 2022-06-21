@@ -38,6 +38,7 @@ export class ListCountriesComponent implements OnInit {
     if(filter.toLocaleLowerCase() === "all"){
       this.loadedCountries = this.cService.getCountries();
       this.regionFilterText = "Filter by region";
+      this.cService.currentRegion  = '';
     } else {
       this.regionFilterText = filter;
       this.loadedCountries = this.cService.searchByRegion(filter);
